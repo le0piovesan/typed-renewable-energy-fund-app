@@ -17,12 +17,8 @@ import {
 } from "../types";
 import LinkingConfiguration from "./LinkingConfiguration";
 import { useAppSelector } from "../hooks/useRedux";
-
 import Colors from "../constants/Colors";
-import ModalScreen from "../screens/ModalScreen";
-import NotFoundScreen from "../screens/NotFoundScreen";
-import TabOneScreen from "../screens/TabOneScreen";
-import TabTwoScreen from "../screens/TabTwoScreen";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 // Pages
 import Login from "../screens/Auth/Login";
@@ -31,11 +27,11 @@ import Home from "../screens/Home";
 import FundDetails from "../screens/FundDetails";
 import Portfolio from "../screens/Portfolio";
 import Trade from "../screens/Trade";
+import NotFound from "../screens/404";
+import Config from "../screens/Config";
 
-import { MaterialCommunityIcons } from "@expo/vector-icons";
-
-const AuthStack = createNativeStackNavigator<any>();
 const Stack = createNativeStackNavigator<RootStackParamList>();
+const AuthStack = createNativeStackNavigator<any>();
 const BottomTab = createBottomTabNavigator<any>();
 const HomeStack = createNativeStackNavigator<any>();
 
@@ -92,11 +88,11 @@ function RootNavigator() {
       />
       <Stack.Screen
         name="NotFound"
-        component={NotFoundScreen}
+        component={NotFound}
         options={{ title: "Oops!" }}
       />
       <Stack.Group screenOptions={{ presentation: "modal" }}>
-        <Stack.Screen name="Modal" component={ModalScreen} />
+        <Stack.Screen name="Config" component={Config} />
       </Stack.Group>
     </Stack.Navigator>
   );
@@ -133,7 +129,7 @@ function BottomTabNavigator() {
           headerStyle: {
             backgroundColor: Colors.brandPrimary,
           },
-          headerTintColor: "#fff",
+          headerTintColor: Colors.brandLight,
           tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons
               name="arrow-decision-outline"
@@ -151,7 +147,7 @@ function BottomTabNavigator() {
           headerStyle: {
             backgroundColor: Colors.brandPrimary,
           },
-          headerTintColor: "#fff",
+          headerTintColor: Colors.brandLight,
           tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons name="store" size={30} color={color} />
           ),
@@ -179,12 +175,12 @@ const HomeStackScreen = ({ navigation, route }: any) => {
           headerStyle: {
             backgroundColor: Colors.brandPrimary,
           },
-          headerTintColor: "#fff",
+          headerTintColor: Colors.brandLight,
           headerTitleAlign: "center",
           title: "",
           headerRight: () => (
             <Pressable
-              onPress={() => navigation.navigate("Modal")}
+              onPress={() => navigation.navigate("Config")}
               style={({ pressed }) => ({
                 opacity: pressed ? 0.5 : 1,
               })}
@@ -206,7 +202,7 @@ const HomeStackScreen = ({ navigation, route }: any) => {
           headerStyle: {
             backgroundColor: Colors.brandPrimary,
           },
-          headerTintColor: "#fff",
+          headerTintColor: Colors.brandLight,
           headerTitleAlign: "center",
           title: "",
         }}
@@ -214,10 +210,3 @@ const HomeStackScreen = ({ navigation, route }: any) => {
     </HomeStack.Navigator>
   );
 };
-
-function TabBarIcon(props: {
-  name: React.ComponentProps<typeof FontAwesome>["name"];
-  color: string;
-}) {
-  return <FontAwesome size={30} style={{ marginBottom: -3 }} {...props} />;
-}

@@ -1,10 +1,10 @@
 import { StatusBar } from "expo-status-bar";
 import { Platform, Text, View } from "react-native";
 
-export default function ModalScreen() {
+export default function Config() {
   return (
     <View>
-      <Text>Modal</Text>
+      <Text>Config</Text>
       <View />
 
       {/* Use a light status bar on iOS to account for the black space above the modal */}
