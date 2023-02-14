@@ -6,7 +6,7 @@ import SectionRow from "../../../components/Container/SectionRow";
 import ScrollForm from "../../../components/ScrollForm";
 import { Title } from "../../../components/Text/Title";
 import { Subtitle } from "../../../components/Text/Subtitle";
-import { Secondary } from "../../../components/Text/Secondary";
+import { Main } from "../../../components/Text/Main";
 import TextInput from "../../../components/TextInput";
 import PressableBtn from "../../../components/PressableBtn";
 
@@ -99,7 +99,11 @@ export default function Login({ navigation }: any) {
 
                 <PressableBtn onPress={handleSubmit} label={"Login"} />
 
-                {wrongUser && <Secondary>User not found</Secondary>}
+                {wrongUser && (
+                  <Main center color={Colors.brandDanger}>
+                    User not found
+                  </Main>
+                )}
               </>
             )}
           </Formik>
