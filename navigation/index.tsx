@@ -1,8 +1,3 @@
-/**
- * If you are not familiar with React Navigation, refer to the "Fundamentals" guide:
- * https://reactnavigation.org/docs/getting-started
- *
- */
 import { FontAwesome } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import {
@@ -28,12 +23,13 @@ import LinkingConfiguration from "./LinkingConfiguration";
 import { useAppSelector } from "../hooks/useRedux";
 
 export default function Navigation() {
-  const theme = useAppSelector((state) => state.theme.theme);
+  // const theme = useAppSelector((state) => state.theme.theme);
+  const currentUser = useAppSelector((state) => state.auth.currentUser);
 
   return (
     <NavigationContainer
       linking={LinkingConfiguration}
-      theme={theme === "dark" ? DarkTheme : DefaultTheme}
+      // theme={theme === "dark" ? DarkTheme : DefaultTheme}
     >
       <RootNavigator />
     </NavigationContainer>
