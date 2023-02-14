@@ -7,7 +7,7 @@ export const types = {
 };
 
 const initialState: Theme = {
-  theme: "dark",
+  theme: "light",
 };
 
 export default function theme(state = initialState, action: any) {
