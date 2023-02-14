@@ -8,7 +8,7 @@ export const StyledButton = styled.TouchableOpacity<Props>`
 
 export const StyledOptionTextButton = styled.Text`
   text-align: center;
-  font-size: 18px;
+  font-size: 16px;
   color: ${Colors.brandGray};
   text-decoration: underline;
 `;

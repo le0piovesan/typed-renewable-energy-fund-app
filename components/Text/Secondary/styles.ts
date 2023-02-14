@@ -4,7 +4,6 @@ import { Props } from "../Title/interfaces";
 
 export const StyleText = styled.Text<Props>`
   padding-left: 5px;
-  font-size: 16px;
-  font-family: "space-mono";
+  font-size: 14px;
   color: ${Colors.brandGray};
 `;

@@ -17,7 +17,7 @@ export const StyledButton = styled.TouchableOpacity<Props>`
 
 export const StyledTextButton = styled.Text`
   text-align: center;
-  font-size: 18px;
+  font-size: 16px;
   color: ${({ secondary }: boolean) =>
     secondary ? Colors.brandPrimary : "#fff"};
   font-family: "space-mono";

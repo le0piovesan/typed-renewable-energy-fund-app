@@ -6,7 +6,7 @@ import { currentColorTheme } from "../../../hooks/useTheme";
 export function Title({ children, ...props }: Props) {
   return (
     <StyleText {...props} currentColorTheme={currentColorTheme}>
-      {children}{" "}
+      {children}
     </StyleText>
   );
 }
