@@ -185,12 +185,7 @@ const HomeStackScreen = ({ navigation, route }: any) => {
                 opacity: pressed ? 0.5 : 1,
               })}
             >
-              <FontAwesome
-                name="info-circle"
-                size={25}
-                color={Colors.brandLight}
-                style={{ marginRight: 15 }}
-              />
+              <FontAwesome name="cog" size={30} color={Colors.brandLight} />
             </Pressable>
           ),
         }}

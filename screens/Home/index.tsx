@@ -1,23 +1,25 @@
 import React, { useEffect } from "react";
+import { useAppSelector } from "../../hooks/useRedux";
 import Container from "../../components/Container";
-
-import { useSelector } from "react-redux";
+import Header from "./Header";
+import Main from "./Main";
+import Footer from "./Footer";
 
 export default function Home({ navigation }: any) {
-  const selector = useSelector((state) => state);
-
-  // @ts-expect-error TS(2571): Object is of type 'unknown'.
+  const selector = useAppSelector((state) => state);
   const user = selector.auth.currentUser;
-
-  // @ts-expect-error TS(2571): Object is of type 'unknown'.
   const funds = selector.funds.funds;
-
-  // @ts-expect-error TS(2571): Object is of type 'unknown'.
   const blog = selector.blog.blog;
 
   useEffect(() => {
     navigation.setOptions({ title: `Hello, ${user.firstName}` });
   }, []);
 
-  return <Container>{/* <Header user={user} /> */}</Container>;
+  return (
+    <Container>
+      <Header user={user} />
+      <Main funds={funds} />
+      <Footer blog={blog} />
+    </Container>
+  );
 }

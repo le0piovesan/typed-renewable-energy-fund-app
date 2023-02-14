@@ -4,4 +4,6 @@ import Colors from "../../constants/Colors";
 export const Logo = styled.Image`
   width: 50px;
   height: 50px;
+  left: -15px;
+  bottom: -15px;
 `;
