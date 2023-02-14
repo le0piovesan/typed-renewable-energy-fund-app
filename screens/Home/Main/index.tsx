@@ -20,7 +20,7 @@ export default function Main({ funds }: any) {
   return (
     <ContainerMain>
       <MainText>Trending Funds 📈</MainText>
-      <Secondary>Current popular funds that are being seen 👀</Secondary>
+      <Secondary>Scroll through these popular funds 👀</Secondary>
       <FlatList
         data={funds}
         keyExtractor={(item, index) => index.toString()}
