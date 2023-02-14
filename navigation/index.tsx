@@ -89,10 +89,26 @@ function RootNavigator() {
       <Stack.Screen
         name="NotFound"
         component={NotFound}
-        options={{ title: "Oops!" }}
+        options={{
+          title: "Ooooops",
+          headerStyle: {
+            backgroundColor: Colors.brandPrimary,
+          },
+          headerTintColor: Colors.brandLight,
+        }}
       />
       <Stack.Group screenOptions={{ presentation: "modal" }}>
-        <Stack.Screen name="Config" component={Config} />
+        <Stack.Screen
+          name="Config"
+          component={Config}
+          options={{
+            title: "Config",
+            headerStyle: {
+              backgroundColor: Colors.brandPrimary,
+            },
+            headerTintColor: Colors.brandLight,
+          }}
+        />
       </Stack.Group>
     </Stack.Navigator>
   );

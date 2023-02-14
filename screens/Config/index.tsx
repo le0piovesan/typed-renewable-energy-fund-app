@@ -1,14 +1,42 @@
 import { StatusBar } from "expo-status-bar";
-import { Platform, Text, View } from "react-native";
+import { Platform, Alert } from "react-native";
+import Container from "../../components/Container";
+import { Title } from "../../components/Text/Title";
+import ButtonText from "../../components/ButtonText";
+import { useAppDispatch } from "../../hooks/useRedux";
+import { Auth } from "../../redux/auth";
 
 export default function Config() {
-  return (
-    <View>
-      <Text>Config</Text>
-      <View />
+  const dispach = useAppDispatch();
 
-      {/* Use a light status bar on iOS to account for the black space above the modal */}
+  const handleLogOut = () => {
+    Alert.alert(
+      "ReNew Funds",
+      "Do you really want to leave?",
+      [
+        {
+          text: "Yes",
+          onPress: async () => {
+            try {
+              await dispach(Auth.logOut());
+            } catch (error) {
+              console.log(error);
+            }
+          },
+        },
+        {
+          text: "Cancel",
+        },
+      ],
+      { cancelable: false }
+    );
+  };
+
+  return (
+    <Container>
       <StatusBar style={Platform.OS === "ios" ? "light" : "auto"} />
-    </View>
+      <Title>Looking for a way out?</Title>
+      <ButtonText label="Log out" onPress={() => handleLogOut()} />
+    </Container>
   );
 }
