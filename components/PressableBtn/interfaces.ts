@@ -3,4 +3,5 @@ export interface Props {
   onPress: () => void;
   secondary?: boolean;
   disabled?: boolean;
+  row?: boolean;
 }

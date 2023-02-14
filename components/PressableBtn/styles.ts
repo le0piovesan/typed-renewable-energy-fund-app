@@ -13,13 +13,14 @@ export const StyledButton = styled.TouchableOpacity<Props>`
   justify-content: center;
   margin-top: 10px;
   opacity: ${({ disabled }: boolean) => (disabled ? 0.5 : 1)};
+  width: ${({ row }: boolean) => (row ? "50%" : "auto")};
+  margin: ${({ row }: boolean) => (row ? "5px" : "0px")};
 `;
 
 export const StyledTextButton = styled.Text`
   text-align: center;
   font-size: 16px;
   color: ${({ secondary }: boolean) =>
-    secondary ? Colors.brandPrimary : "#fff"};
-  font-family: "space-mono";
+    secondary ? Colors.brandPrimary : Colors.brandLight};
   font-weight: bold;
 `;
