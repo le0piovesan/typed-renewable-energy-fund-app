@@ -3,9 +3,9 @@ import Colors from "../../../constants/Colors";
 import { Props } from "../Title/interfaces";
 
 export const StyleText = styled.Text<Props>`
-  padding-left: 10px;
-  font-size: 24px;
+  padding-left: 5px;
+  font-size: 18px;
   text-align: center;
   font-family: "space-mono";
-  color: gray;
+  color: ${Colors.brandGray};
 `;

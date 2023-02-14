@@ -9,7 +9,7 @@ export default function Register({ navigation }: any) {
       <Title>Register</Title>
       <ButtonText
         label={"Or log in"}
-        onPress={() => navigation.navigate("Register")}
+        onPress={() => navigation.navigate("Login")}
       />
     </Container>
   );

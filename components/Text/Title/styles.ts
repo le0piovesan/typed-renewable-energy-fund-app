@@ -3,11 +3,10 @@ import Colors from "../../../constants/Colors";
 import { Props } from "./interfaces";
 
 export const StyleText = styled.Text<Props>`
-  padding-left: 10px;
-  font-size: 24px;
+  padding-left: 5px;
+  font-size: 20px;
   text-align: center;
   font-weight: bold;
   font-family: "space-mono";
-  color: ${({ currentColorTheme }: any) =>
-    currentColorTheme == "dark" ? Colors.brandLight : Colors.brandDark};
+  color: ${({ color }: string) => (color ? color : Colors.brandDark)};
 `;
