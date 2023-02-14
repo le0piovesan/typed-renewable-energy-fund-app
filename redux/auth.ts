@@ -39,9 +39,8 @@ export const Auth = {
     type: types.logIn,
     payload: user,
   }),
-  logOut: () =>
-    void {
-      type: types.logOut,
-      payload: false,
-    },
+  logOut: (user: boolean) => ({
+    type: types.logOut,
+    payload: user,
+  }),
 };
