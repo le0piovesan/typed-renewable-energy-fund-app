@@ -9,11 +9,6 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import * as React from "react";
 import { Pressable } from "react-native";
 
-import Colors from "../constants/Colors";
-import ModalScreen from "../screens/ModalScreen";
-import NotFoundScreen from "../screens/NotFoundScreen";
-import TabOneScreen from "../screens/TabOneScreen";
-import TabTwoScreen from "../screens/TabTwoScreen";
 import {
   RootStackParamList,
   RootTabParamList,
@@ -21,6 +16,23 @@ import {
 } from "../types";
 import LinkingConfiguration from "./LinkingConfiguration";
 import { useAppSelector } from "../hooks/useRedux";
+
+import Colors from "../constants/Colors";
+import ModalScreen from "../screens/ModalScreen";
+import NotFoundScreen from "../screens/NotFoundScreen";
+import TabOneScreen from "../screens/TabOneScreen";
+import TabTwoScreen from "../screens/TabTwoScreen";
+
+// Pages
+import Login from "../screens/Auth/Login";
+import Register from "../screens/Auth/Register";
+import Home from "../screens/Home";
+import FundDetails from "../screens/FundDetails";
+import Portfolio from "../screens/Portfolio";
+import Trade from "../screens/Trade";
+
+const AuthStack = createNativeStackNavigator<any>();
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export default function Navigation() {
   // const theme = useAppSelector((state) => state.theme.theme);
@@ -31,12 +43,39 @@ export default function Navigation() {
       linking={LinkingConfiguration}
       // theme={theme === "dark" ? DarkTheme : DefaultTheme}
     >
-      <RootNavigator />
+      {currentUser ? (
+        <RootNavigator />
+      ) : (
+        <AuthStack.Navigator>
+          <AuthStack.Screen
+            name="Login"
+            component={Login}
+            options={{
+              title: "Login",
+              headerStyle: {
+                backgroundColor: Colors.brandPrimary,
+              },
+              headerTintColor: Colors.brandLight,
+            }}
+          />
+          <AuthStack.Screen
+            name="Register"
+            component={Register}
+            options={{
+              title: "Register",
+              headerStyle: {
+                backgroundColor: Colors.brandPrimary,
+              },
+              headerBackButtonMenuEnabled: false,
+              headerBackVisible: false,
+              headerTintColor: Colors.brandLight,
+            }}
+          />
+        </AuthStack.Navigator>
+      )}
     </NavigationContainer>
   );
 }
-
-const Stack = createNativeStackNavigator<RootStackParamList>();
 
 function RootNavigator() {
   return (
