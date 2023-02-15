@@ -2,7 +2,6 @@ import React, { useState, useRef } from "react";
 
 import ButtonText from "../../../components/ButtonText";
 import Container from "../../../components/Container";
-import SectionRow from "../../../components/Container/SectionRow";
 import ScrollForm from "../../../components/ScrollForm";
 import { Title } from "../../../components/Text/Title";
 import { Subtitle } from "../../../components/Text/Subtitle";

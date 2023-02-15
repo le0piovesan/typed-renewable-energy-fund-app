@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 
 import ButtonText from "../../../components/ButtonText";
 import Container from "../../../components/Container";
@@ -6,11 +6,8 @@ import SectionRow from "../../../components/Container/SectionRow";
 import ScrollForm from "../../../components/ScrollForm";
 import { Title } from "../../../components/Text/Title";
 import { Subtitle } from "../../../components/Text/Subtitle";
-import { Secondary } from "../../../components/Text/Secondary";
 import TextInput from "../../../components/TextInput";
 import PressableBtn from "../../../components/PressableBtn";
-
-import { Logo } from "../styles";
 
 import Colors from "../../../constants/Colors";
 import ContainerForm from "../../../components/Container/ContainerForm";
@@ -83,7 +80,6 @@ export default function Register({ navigation }: any) {
                   termsAgreed,
                   account: 100,
                 });
-
                 // Mock loading success
                 setTimeout(() => {
                   setLoading(false);

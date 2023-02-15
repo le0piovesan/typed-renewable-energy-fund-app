@@ -2,8 +2,6 @@ import { FontAwesome } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import {
   NavigationContainer,
-  DefaultTheme,
-  DarkTheme,
   getFocusedRouteNameFromRoute,
 } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -20,7 +18,6 @@ import { useAppSelector } from "../hooks/useRedux";
 import Colors from "../constants/Colors";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-// Pages
 import Login from "../screens/Auth/Login";
 import Register from "../screens/Auth/Register";
 import Home from "../screens/Home";
@@ -36,14 +33,10 @@ const BottomTab = createBottomTabNavigator<any>();
 const HomeStack = createNativeStackNavigator<any>();
 
 export default function Navigation() {
-  // const theme = useAppSelector((state) => state.theme.theme);
   const currentUser = useAppSelector((state) => state.auth.currentUser);
 
   return (
-    <NavigationContainer
-      linking={LinkingConfiguration}
-      // theme={theme === "dark" ? DarkTheme : DefaultTheme}
-    >
+    <NavigationContainer linking={LinkingConfiguration}>
       {currentUser ? (
         <RootNavigator />
       ) : (

@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { View, Text } from "react-native";
 import Container from "../../components/Container";
 import { Title } from "../../components/Text/Title";
 import SectionRow from "../../components/Container/SectionRow";
@@ -85,13 +84,8 @@ export default function FundDetails({ navigation, route }: any) {
         </Secondary>
       </PlotBackground>
       <SectionRow>
-        <PressableBtn
-          label={"Sell"}
-          secondary
-          row
-          onPress={() => console.log("sell")}
-        />
-        <PressableBtn label={"Buy"} row onPress={() => console.log("buy")} />
+        <PressableBtn label={"Sell"} secondary row onPress={() => {}} />
+        <PressableBtn label={"Buy"} row onPress={() => {}} />
       </SectionRow>
     </Container>
   );

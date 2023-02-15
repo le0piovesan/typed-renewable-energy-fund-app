@@ -18,7 +18,7 @@ export default function Config() {
           text: "Yes",
           onPress: async () => {
             try {
-              await dispach(Auth.logOut());
+              await dispach(Auth.logOut(false));
             } catch (error) {
               console.log(error);
             }

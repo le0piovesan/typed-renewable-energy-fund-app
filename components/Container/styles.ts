@@ -1,5 +1,4 @@
 import styled from "styled-components/native";
-import Colors from "../../constants/Colors";
 import { Props } from "./interfaces";
 
 export const StyledContainer = styled.SafeAreaView<Props>`
