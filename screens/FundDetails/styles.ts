@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Colors from "../../constants/Colors";
 
 export const FundContainer = styled.View`
-  background-color: ${Colors.brandLight};
+  background-color: ${(props) => props.theme.brandBackground};
   border-radius: 100px;
 `;
 
@@ -18,7 +18,7 @@ export const Grid = styled.View`
   flex-direction: row;
   width: 100%;
   border-bottom-width: 1px;
-  border-bottom-color: ${Colors.borderColor};
+  border-bottom-color: ${(props) => props.theme.borderColor};
 `;
 
 export const Graph = styled.Image`
@@ -30,7 +30,7 @@ export const Description = styled.View`
   justify-content: center;
   align-items: center;
   border-left-width: 1px;
-  border-left-color: ${Colors.borderColor};
+  border-left-color: ${(props) => props.theme.borderColor};
 `;
 
 export const MoreInfo = styled.View`
@@ -39,7 +39,7 @@ export const MoreInfo = styled.View`
   padding: 5px;
   margin: 5px;
   border-bottom-width: 1px;
-  border-bottom-color: ${Colors.borderColor};
+  border-bottom-color: ${(props) => props.theme.borderColor};
 `;
 
 export const PlotBackground = styled.ImageBackground`

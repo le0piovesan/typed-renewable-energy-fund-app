@@ -22,8 +22,8 @@ export default function Footer({ blog }: any) {
             <BlogCard colors={[Colors.brandSecondary, "transparent"]}>
               <SectionRow spaced>
                 <View>
-                  <Main color={Colors.brandLight}>{item.title}</Main>
-                  <Text>{item.description}</Text>
+                  <Main>{item.title}</Main>
+                  <Secondary>{item.description}</Secondary>
                 </View>
                 <MaterialIcons name="read-more" size={35} color="#fff" />
               </SectionRow>

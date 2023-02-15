@@ -20,7 +20,7 @@ export const StyledButton = styled.TouchableOpacity<Props>`
 export const StyledTextButton = styled.Text`
   text-align: center;
   font-size: 16px;
-  color: ${({ secondary }: boolean) =>
+  color: ${({ secondary }: any) =>
     secondary ? Colors.brandPrimary : Colors.brandLight};
   font-weight: bold;
 `;

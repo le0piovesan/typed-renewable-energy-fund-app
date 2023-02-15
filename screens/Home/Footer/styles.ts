@@ -12,6 +12,6 @@ export const BlogCard = styled(LinearGradient)`
   padding: 10px;
   margin: 5px 0px;
   border-width: 1px;
-  border-color: ${Colors.borderColor};
+  border-color: ${(props) => props.theme.borderColor};
   border-radius: 5px;
 `;

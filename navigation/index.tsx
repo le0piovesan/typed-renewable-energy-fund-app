@@ -27,6 +27,10 @@ import Trade from "../screens/Trade";
 import NotFound from "../screens/404";
 import Config from "../screens/Config";
 
+import { lightTheme, darkTheme } from "../constants/Colors";
+import { currentColorTheme } from "../hooks/useTheme";
+import { ThemeProvider } from "styled-components";
+
 const Stack = createNativeStackNavigator<RootStackParamList>();
 const AuthStack = createNativeStackNavigator<any>();
 const BottomTab = createBottomTabNavigator<any>();
@@ -34,40 +38,43 @@ const HomeStack = createNativeStackNavigator<any>();
 
 export default function Navigation() {
   const currentUser = useAppSelector((state) => state.auth.currentUser);
+  const theme = currentColorTheme();
 
   return (
-    <NavigationContainer linking={LinkingConfiguration}>
-      {currentUser ? (
-        <RootNavigator />
-      ) : (
-        <AuthStack.Navigator>
-          <AuthStack.Screen
-            name="Login"
-            component={Login}
-            options={{
-              title: "Login",
-              headerStyle: {
-                backgroundColor: Colors.brandPrimary,
-              },
-              headerTintColor: Colors.brandLight,
-            }}
-          />
-          <AuthStack.Screen
-            name="Register"
-            component={Register}
-            options={{
-              title: "Register",
-              headerStyle: {
-                backgroundColor: Colors.brandPrimary,
-              },
-              headerBackButtonMenuEnabled: false,
-              headerBackVisible: false,
-              headerTintColor: Colors.brandLight,
-            }}
-          />
-        </AuthStack.Navigator>
-      )}
-    </NavigationContainer>
+    <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+      <NavigationContainer linking={LinkingConfiguration}>
+        {currentUser ? (
+          <RootNavigator />
+        ) : (
+          <AuthStack.Navigator>
+            <AuthStack.Screen
+              name="Login"
+              component={Login}
+              options={{
+                title: "Login",
+                headerStyle: {
+                  backgroundColor: Colors.brandPrimary,
+                },
+                headerTintColor: Colors.brandLight,
+              }}
+            />
+            <AuthStack.Screen
+              name="Register"
+              component={Register}
+              options={{
+                title: "Register",
+                headerStyle: {
+                  backgroundColor: Colors.brandPrimary,
+                },
+                headerBackButtonMenuEnabled: false,
+                headerBackVisible: false,
+                headerTintColor: Colors.brandLight,
+              }}
+            />
+          </AuthStack.Navigator>
+        )}
+      </NavigationContainer>
+    </ThemeProvider>
   );
 }
 
@@ -108,6 +115,10 @@ function RootNavigator() {
 }
 
 function BottomTabNavigator() {
+  const theme = currentColorTheme();
+  const bottomTabsTheme =
+    theme === "light" ? lightTheme.brandBackground : darkTheme.brandBackground;
+
   return (
     <BottomTab.Navigator
       initialRouteName="Home"
@@ -115,6 +126,11 @@ function BottomTabNavigator() {
         headerTitleAlign: "center",
         lazy: false,
         tabBarActiveTintColor: Colors.brandPrimary,
+        tabBarActiveBackgroundColor: bottomTabsTheme,
+        tabBarInactiveBackgroundColor: bottomTabsTheme,
+        tabBarStyle: {
+          backgroundColor: bottomTabsTheme,
+        },
         tabBarLabelStyle: {
           fontSize: 12,
         },

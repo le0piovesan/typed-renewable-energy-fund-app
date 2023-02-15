@@ -12,7 +12,7 @@ export const ContainerLabel = styled.View`
   top: -10px;
   left: 15px;
   z-index: 50;
-  background-color: #fff;
+  background-color: ${(props) => props.theme.brandBackground};
 `;
 
 export const StyledInput = styled.TextInput<Props>`
@@ -23,11 +23,13 @@ export const StyledInput = styled.TextInput<Props>`
   border-radius: 10px;
   padding-left: 20px;
   padding-right: 20px;
+  color: ${(props) => props.theme.brandText};
 `;
 
 export const StyledText = styled.Text`
   margin-left: 5px;
   margin-right: 5px;
+  color: ${(props) => props.theme.brandText};
 `;
 
 export const StyledPasswordButton = styled.TouchableOpacity`
