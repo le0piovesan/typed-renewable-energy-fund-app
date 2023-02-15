@@ -10,7 +10,7 @@
     "splash": {
       "image": "./assets/images/logo-label-renew.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#39393a"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -22,7 +22,7 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/logo-renew.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#39393a"
       }
     },
     "web": {
