@@ -3,11 +3,16 @@ import { Platform, Alert } from "react-native";
 import Container from "../../components/Container";
 import { Title } from "../../components/Text/Title";
 import ButtonText from "../../components/ButtonText";
+import PressableBtn from "../../components/PressableBtn";
+import SectionRow from "../../components/Container/SectionRow";
+import { currentColorTheme } from "../../hooks/useTheme";
 import { useAppDispatch } from "../../hooks/useRedux";
+import { Theme } from "../../redux/theme";
 import { Auth } from "../../redux/auth";
 
 export default function Config() {
   const dispach = useAppDispatch();
+  const theme = currentColorTheme();
 
   const handleLogOut = () => {
     Alert.alert(
@@ -35,7 +40,26 @@ export default function Config() {
   return (
     <Container>
       <StatusBar style={Platform.OS === "ios" ? "light" : "auto"} />
-      <Title>Looking for a way out?</Title>
+
+      <Title>Theme Settings</Title>
+      <SectionRow>
+        <PressableBtn
+          label={"Light Mode ☀️"}
+          secondary={theme === "dark"}
+          disabled={theme === "light"}
+          row
+          onPress={() => dispach(Theme.switchTheme("light"))}
+        />
+        <PressableBtn
+          label={"Dark Mode 🌙"}
+          secondary={theme === "light"}
+          disabled={theme === "dark"}
+          row
+          onPress={() => dispach(Theme.switchTheme("dark"))}
+        />
+      </SectionRow>
+
+      <Title>{"\n"}Looking for a way out?</Title>
       <ButtonText label="Log out" onPress={() => handleLogOut()} />
     </Container>
   );
