@@ -46,15 +46,13 @@ export default function Login({ navigation }: any) {
   return (
     <Container>
       <ScrollForm scrollHidden>
-        <SectionRow>
-          <Logo
-            source={require("../../../assets/images/logo-renew.png")}
-            resizeMode="contain"
-          />
-          <Title>
-            Welcome to <Title color={Colors.brandPrimary}>ReNew Funds</Title>!
-          </Title>
-        </SectionRow>
+        <Logo
+          source={require("../../../assets/images/logo-renew.png")}
+          resizeMode="contain"
+        />
+        <Title>
+          Welcome to <Title color={Colors.brandPrimary}>ReNew Funds</Title>!
+        </Title>
         <Subtitle>Already have an account?</Subtitle>
         <ContainerForm>
           <Formik

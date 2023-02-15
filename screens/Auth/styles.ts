@@ -1,9 +1,7 @@
 import styled from "styled-components";
-import Colors from "../../constants/Colors";
 
 export const Logo = styled.Image`
-  width: 50px;
+  width: 100%;
   height: 50px;
-  left: -15px;
-  bottom: -15px;
+  margin-bottom: 10px;
 `;
