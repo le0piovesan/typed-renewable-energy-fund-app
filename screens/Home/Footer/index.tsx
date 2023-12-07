@@ -19,10 +19,10 @@ export default function Footer({ blog }: any) {
         showsVerticalScrollIndicator={false}
         renderItem={({ item }) => (
           <TouchableOpacity onPress={() => Linking.openURL(item.linkTo)}>
-            <BlogCard colors={[Colors.brandSecondary, "transparent"]}>
+            <BlogCard>
               <SectionRow spaced>
                 <View>
-                  <Main>{item.title}</Main>
+                  <Main color={Colors.brandSecondary}>{item.title}</Main>
                   <Secondary>{item.description}</Secondary>
                 </View>
                 <MaterialIcons name="read-more" size={35} color="#fff" />

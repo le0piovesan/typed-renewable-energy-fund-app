@@ -30,7 +30,12 @@ export default function Main({ funds }: any) {
             onPress={() => navigation.navigate("FundDetails", { item })}
           >
             <FundBackground
-              colors={[Colors.brandPrimary, "transparent", "transparent"]}
+              colors={[
+                Colors.brandPrimary,
+                "transparent",
+                "transparent",
+                "transparent",
+              ]}
               start={{ x: 1, y: 0 }}
               end={{ x: 0, y: 1 }}
             >

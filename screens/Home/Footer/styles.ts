@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { LinearGradient } from "expo-linear-gradient";
 import Colors from "../../../constants/Colors";
 
 export const ContainerFooter = styled.View`
@@ -8,7 +7,7 @@ export const ContainerFooter = styled.View`
   padding: 10px 0px 0px;
 `;
 
-export const BlogCard = styled(LinearGradient)`
+export const BlogCard = styled.View`
   padding: 10px;
   margin: 5px 0px;
   border-width: 1px;

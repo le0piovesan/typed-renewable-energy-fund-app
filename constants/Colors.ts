@@ -1,20 +1,20 @@
 export const lightTheme = {
   mode: "light",
   brandBackground: "#fff",
-  brandText: "#39393a",
-  borderColor: "#d3e2df",
+  brandText: "#181818",
+  borderColor: "#47245c",
 };
 
 export const darkTheme = {
   mode: "dark",
-  brandBackground: "#39393a",
+  brandBackground: "#181818",
   brandText: "#fff",
-  borderColor: "#84aba3",
+  borderColor: "#47245c",
 };
 
 export default {
-  brandPrimary: "#408C65",
-  brandSecondary: "#40678C",
+  brandPrimary: "#311642",
+  brandSecondary: "#47245c",
   brandLight: "#fff",
   brandGray: "#8E8E8E",
   brandValue: "#2bba72",
